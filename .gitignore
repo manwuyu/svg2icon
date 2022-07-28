@@ -1,0 +1,16 @@
+# Dependency directories
+node_modules/
+
+# Logs
+*.log
+
+# lock
+*.lock
+
+# dist
+lib
+es
+docs-dist
+
+.umi
+.umi-production

@@ -1,0 +1,18 @@
+pages:
+  cache:
+    paths:
+    - node_modules/
+  image: harbor.cloudhw.cn:8443/public/node:12.20.0-alpine
+  script:
+  - yarn install --registry=https://registry.npm.taobao.org --pure-lockfile
+  - yarn doc:build
+  - rm -rf public
+  - mv docs-dist public
+
+  artifacts:
+    paths:
+    - public
+  tags:
+    - node-docker
+  only:
+    - main
